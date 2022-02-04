@@ -14,7 +14,7 @@ function computerPlay() {
         return ('Scissors');
     }
 }
-
+/* used .toLowerCase() to make it case in-sensitive */
 function playRound(playerSelection, computerSelection) {
     let playerChoice = playerSelection.toLowerCase();
     let computerChoice = computerSelection.toLowerCase();
@@ -40,7 +40,7 @@ function playRound(playerSelection, computerSelection) {
         return true;
     }
 }
-
+/*game only goes 5 rounds no matter what */
 function game() {
     let playerWinCount = 0;
     let computerWinCount = 0;
