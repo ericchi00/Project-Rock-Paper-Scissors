@@ -14,33 +14,58 @@ function computerPlay() {
         return ('Scissors');
     }
 }
-/* used .toLowerCase() to make it case in-sensitive */
+const results = document.querySelector('.results');
+const playerScore = document.querySelector('.playerScore');
+const computerScore = document.querySelector('.computerScore');
+
 function playRound(playerSelection, computerSelection) {
-    let playerChoice = playerSelection.toLowerCase();
-    let computerChoice = computerSelection.toLowerCase();
-    if (playerChoice === computerChoice) {
-        console.log("You tied.");
-    } else if (playerChoice === 'rock' && computerChoice === 'paper') {
-        console.log("You lose! Paper beats Rock.");
-        return false;
-    } else if (playerChoice === 'rock' && computerChoice === 'scissors') {
-        console.log("You win! Rock beats Sciscors.");
-        return true;
-    } else if (playerChoice === 'paper' && computerChoice === 'rock') {
-        console.log("You win! Paper beats Rock.");
-        return true;
-    } else if (playerChoice === 'paper' && computerChoice === 'scissors') {
-        console.log("You lose! Scissors beat rock.");
-        return false;
-    } else if (playerChoice === 'scissors' && computerChoice === 'rock') {
-        console.log("You lose! Rock beats scissors.");
-        return false;
-    } else if (playerChoice === 'scissors' && computerChoice === 'paper') {
-        console.log("You win! Scissors beats paper.");
-        return true;
+    let playerWinCount = 0;
+    let computerWinCount = 0;
+    for (i = 1; i <+ 5; i++) {
+        if (playerSelection === computerSelection) {
+            results.textContent += ("You tied.");
+            score.textContent = playerWinCount
+        } else if (playerSelection === 'rock' && computerSelection === 'Paper') {
+            results.textContent += ("You lose! Paper beats Rock.");
+            ++computerWinCount;
+        } else if (playerSelection === 'rock' && computerSelection === 'Scissors') {
+            results.textContent += " You win! Rock beats Sciscors.";
+            ++playerWinCount;
+        } else if (playerSelection === 'paper' && computerSelection === 'Rock') {
+            results.textContent += " You win! Paper beats Rock.";
+            ++playerWinCount;
+        } else if (playerSelection === 'paper' && computerSelection === 'Scissors') {
+            results.textContent += " You lose! Scissors beat rock.";
+            ++computerWinCount;
+        } else if (playerSelection === 'scissors' && computerSelection === 'Rock') {
+            results.textContent += " You lose! Rock beats scissors.";
+            ++computerWinCount;
+        } else if (playerSelection === 'scissors' && computerSelection === 'Paper') {
+            results.textContent += " You win! Scissors beats paper.";
+            ++playerWinCount;
+        }
+
     }
 }
-/*game only goes 5 rounds no matter what */
+const rockBtn = document.querySelector('.rockBtn');
+rockBtn.addEventListener("click", () => {
+    playRound('rock', computerPlay());
+});
+
+const paperBtn = document.querySelector('.paperBtn');
+paperBtn.addEventListener("click", () => {
+    playRound('paper', computerPlay());
+});
+
+const scissorsBtn = document.querySelector('.scissorsBtn');
+scissorsBtn.addEventListener("click", () => {
+    playRound('scissors', computerPlay());
+});
+
+
+
+
+/* game only goes 5 rounds no matter what 
 function game() {
     let playerWinCount = 0;
     let computerWinCount = 0;
@@ -66,6 +91,4 @@ function game() {
     } else {
         console.log("You tied the computer.");
     }
-    }
-
-game();
+    */
