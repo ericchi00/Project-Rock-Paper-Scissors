@@ -5,15 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button class="rockBtn">Rock</button>
-    <button class="paperBtn">Paper</button>
-    <button class="scissorsBtn">Scissors</button>
+    <div class="score-container">
+        <div class="playerScore">Player Score: <p class="updatePlayerScore"></p>
+        </div>
+        <div class="computerScore">Computer Score: <p class="updateComputerScore"></p>
+        </div>
+    </div>
+    <div class="buttonContainer">
+        <div class="picButton">
+            <img src="images/rock.png" alt="Drawn picture of a ahnd doing rock motion">
+            <button class="rockBtn">Rock</button>
+        </div>
+        <div class="picButton">
+            <img src="images/paper.png" alt="Drawn picture of a hand doing paper motion">
+            <button class="paperBtn">Paper</button>
+        </div>
+        <div class="picButton">
+            <img src="images/scissors.png" alt="Drawn picture of a hand doing scissors motion">
+            <button class="scissorsBtn">Scissors</button>
+        </div>
+    </div>
+    <button class="reset">Reset</button>
     <div class="results">Results: </div>
-    <div class="score">Score: </div>
-    <p class="playerScore">Player Score: </p>
-    <p class="computerScore">Computer Score: </p>
     <script src ="script.js" defer></script>
 </body>
 </html>
